@@ -1,10 +1,11 @@
 package cinema;
 
 import static cinema.Cinema.*;
+import static java.lang.System.out;
 
 class ShowSeats {
     static void showSeats(int rows, int seats, int rowNum, int seatNum) {
-        System.out.println("Cinema:");
+        out.println("Cinema:");
         char count = '1';
 
         for (int i = 0; i <= rows; i++) {
@@ -36,9 +37,9 @@ class ShowSeats {
         int i = 0;
         while (i <= rows) {
             for (int j = 0; j <= seats; j++) {
-                System.out.print(cinemaHall[i][j] + " ");
+                out.print(cinemaHall[i][j] + " ");
             }
-            System.out.println();
+            out.println();
             i++;
         }
     }

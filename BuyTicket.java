@@ -3,25 +3,26 @@ package cinema;
 import java.util.Scanner;
 
 import static cinema.Cinema.*;
+import static java.lang.System.out;
 
 class BuyTicket {
     static void buyTicket(int rows, int seats) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner s = new Scanner(System.in);
 
         while (true) {
-            System.out.println("Enter a row number:");
-            rowNum = scanner.nextInt();
+            out.println("Enter a row number:");
+            rowNum = s.nextInt();
 
             if (rowNum < 1 || rowNum > rows) {
-                System.out.println("Wrong input!");
+                out.println("Wrong input!");
                 continue;
             }
 
-            System.out.println("Enter a seat number in that row:");
-            seatNum = scanner.nextInt();
+            out.println("Enter a seat number in that row:");
+            seatNum = s.nextInt();
 
             if (seatNum < 1 || seatNum > seats) {
-                System.out.println("Wrong input!");
+                out.println("Wrong input!");
                 continue;
             }
 
@@ -29,7 +30,7 @@ class BuyTicket {
             int ticketPrice;
 
             if (cinemaHall[rowNum][seatNum] == 'B') {
-                System.out.println("That ticket has already been purchased!");
+                out.println("That ticket has already been purchased!");
             } else {
                 ticketPrice = rows * seats < 60 || rowNum <= first ? 10 : 8;
 
@@ -37,8 +38,8 @@ class BuyTicket {
                 purchasedTickets++;
                 currentIncome += ticketPrice;
 
-                System.out.println("Ticket price: $" + ticketPrice);
-                System.out.println();
+                out.println("Ticket price: $" + ticketPrice);
+                out.println();
                 break;
             }
         }
